@@ -1,0 +1,146 @@
+(base) C:\Users\sartoria1\Desktop\prova>python code_with_generic_SQL.py
+SQL Server Database connection successful
+0
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  34.19947409629822
+1
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  38.47679138183594
+2
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  59.150124073028564
+3
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  46.40184736251831
+4
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  54.60573697090149
+5
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  45.677509784698486
+6
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  44.4491503238678
+7
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  41.35569453239441
+8
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  37.92143797874451
+9
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  45.88727855682373
+10
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  52.906161308288574
+11
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  54.50297951698303
+12
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  48.829537868499756
+13
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  82.0991678237915
+14
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  46.008492946624756
+15
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  40.65812349319458
+16
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  40.575002670288086
+17
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  71.25399923324585
+18
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  48.572495460510254
+19
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  42.51612138748169
+20
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  41.83345651626587
+21
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  42.93926501274109
+22
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  44.23616099357605
+23
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  33.89517641067505
+24
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  37.63397240638733
+25
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  41.74864864349365
+26
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  39.6325626373291
+27
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  44.77676963806152
+28
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  56.6052041053772
+29
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  60.138869285583496
+30
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  47.4215407371521
+31
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  50.083441495895386
+32
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  54.03270483016968
+33
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  53.179935693740845
+34
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  48.369476079940796
+35
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  55.398682832717896
+36
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  42.10908627510071
+37
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  45.41480302810669
+38
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  42.43855667114258
+39
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  46.57052826881409
+40
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  47.39384913444519
+41
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  71.18342661857605
+42
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  50.04190802574158
+43
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  43.69313192367554
+44
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  39.4701886177063
+45
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  48.88008451461792
+46
+100000 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  44.2646107673645
+47
+96977 rows inserted to the [T2DAP].[ven].[covid19_pcr_testing_all_care_settings] table
+Time elapsed:  54.52622699737549
