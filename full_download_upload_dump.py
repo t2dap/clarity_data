@@ -1,6 +1,5 @@
 import bcp
 import datetime
-from config import server_info, server_info_dev, database_testing, database_upload,load_table
 import warnings
 import logging
 import time
@@ -18,13 +17,12 @@ from config import server_info, server_info_dev, database_testing, database_uplo
 import multiprocessing
 # print(multiprocessing.cpu_count())
 
-from pathlib import Path
-
 # Disable the warnings
 warnings.filterwarnings('ignore')
 
-path_raw_files = '.\\raw_files\\'
-# path_raw_files=r'C:\Users\sartoria1\Desktop\prova\raw_files'
+path_raw_files = r'C:\Users\a-sartoria1\clarity_data\raw_files'
+# path_raw_files = '.\\raw_files\\'
+# path_raw_files = r'C:\Users\sartoria1\Desktop\prova\raw_files'
 # print()
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 filename = f'dump_{today}'
@@ -34,10 +32,14 @@ filename = f'dump_{today}'
 # connect to the database Clarity and download the data dump from the assigned table
 def download_clarity(path_raw_files,filename, database):
 
-    conn = bcp.Connection(host= server_info, driver='mssql')
-    my_bcp = bcp.BCP(conn)
 
-    path = Path(f'{path_raw_files}{filename}.csv')
+    conn = bcp.Connection(host = server_info, driver='mssql' )
+    my_bcp = bcp.BCP(conn)
+    #testfile = my_bcp.files.LogFile(file_path = Path(r'C:\Users\a-sartoria1\bcp\log\test.log'))
+    #testfile = bcp.files.LogFile()
+    # print(testfile.path)
+    # bcp.files.ErrorFile(file_path = Path(r'C:\Users\a-sartoria1\bcp\log\test.log'))
+    path = Path(f'{path_raw_files}\\{filename}.csv')
     file = bcp.DataFile(file_path= path, delimiter='|')
     my_bcp.dump(query= f'''SELECT LOC_NAME
                 ,FACILITY_ID
@@ -46,17 +48,17 @@ def download_clarity(path_raw_files,filename, database):
                 ,HOSPITAL_SERVICE
                 ,PAT_ID
                 ,PAT_NAME
-                , MRN
+                ,MRN
                 ,CONTACT_DATE
                 ,BIRTH_DATE
                 ,ORDER_TIME
                 ,ORD_RESULT_TIME
-                , ORDER_PROC_ID
+                ,ORDER_PROC_ID
                 ,SPECIMEN_TYPE
-                , PROC_NAME
-                , COVID19_PROC_TYPE
-                , AGE
-                , AGE_GROUP
+                ,PROC_NAME
+                ,COVID19_PROC_TYPE
+                ,AGE
+                ,AGE_GROUP
                 ,PATIENT_SEX
                 ,PATIENT_RACE
                 ,PATIENT_LANGUAGE
@@ -74,7 +76,7 @@ def download_clarity(path_raw_files,filename, database):
                 ,Neighborhood
         FROM [CovResponse].[Tableau].[V_COVID19_PCR_Testing_All_Care_Settings]''', output_file=file)
 
-
+    
 '''create a connection to the database T2DAP'''
 
 def create_server_connection(server, database):
@@ -115,11 +117,16 @@ if __name__ == '__main__':
 
 
     '''run function to download bulk data from ophw database'''
-
+    # filetest = path_filename = f'{path_raw_files}\\test.csv'
+    # file = open(filetest, 'a+')
+    # file.write('DOWNLOAD PART \n')
     start = time.time()
+    print('DOWNLOAD')
     download_clarity(path_raw_files=path_raw_files,filename=filename, database=database_testing)
     stop = time.time()
     print(stop - start)
+
+
 
     '''run function to upload bulk data to T2DAP database'''
 
@@ -134,18 +141,18 @@ if __name__ == '__main__':
     connection_to_load_tdap = create_server_connection(server=server_info_dev, database=database_upload)
     cursor=connection_to_load_tdap.cursor()
     # start = time.time()
-    filename = f'dump_{today}'
-    path_filename = f'{path_raw_files}{filename}.csv'
+    # filename = f'dump_{today}'
+    path_filename = f'{path_raw_files}\\{filename}.csv'
     chunck_size_value = 100000
     columns_date = ['birth_date','contact_date', 'ord_result_time','order_time','hosp_disch_time','inpatient_adm_date','hosp_adm_time','death_date']
-    chuncks = pd.read_csv(path_filename, delimiter='|', engine='python',
-                        dtype={"loc_name": str, "admit_dep_name":str ,"department_id":object ,"hospital_service":str},
+    chuncks = pd.read_csv(path_filename, delimiter='|', encoding="latin1", dtype={"loc_name": str, "admit_dep_name":str ,"department_id":object ,"hospital_service":str},
                         names = columns,
                         parse_dates= columns_date,
                         chunksize= chunck_size_value)
 
 
-    print('UPLOAD PART')
+    print('UPLOAD')
+    # file.write('UPLOAD PART \n')
     for ii, df in enumerate(chuncks):
         # print(df['order_procedure_id'])
         start = time.time()
@@ -155,9 +162,10 @@ if __name__ == '__main__':
         df['crtd_dt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         print(ii)
-        print(df)
+        # print(df)
         # print(df.loc[25085])
         load_data(cursor,df,table=load_table)
 
         stop = time.time()
         print('Time elapsed: ', stop - start)
+    # file.close()
