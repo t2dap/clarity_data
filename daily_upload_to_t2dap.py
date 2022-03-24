@@ -4,6 +4,7 @@ from config import server_info, server_info_dev, database_testing, database_uplo
 import warnings
 import logging
 import time
+import schedule
 
 import chunk
 import time
@@ -100,8 +101,11 @@ def load_data(cursor, df, table):
     cursor.commit()
 
 
-#entrypoint
-if __name__ == '__main__':
+def mainJob():
+
+    path_raw_files = r'C:\Users\a-sartoria1\clarity_data\daily_dump'
+    today = datetime.datetime.now().strftime('%Y-%m-%d')
+    filename = f'daily_dump_{today}'
 
     '''run function to download bulk data from ophw database'''
     start = time.time()
@@ -146,4 +150,13 @@ if __name__ == '__main__':
         load_data(cursor,df,table=load_table)
         stop = time.time()
         print('Time elapsed: ', stop - start)
+
     # connection_to_load_tdap.close()
+    #entrypoint
+if __name__ == '__main__':
+
+
+    schedule.every().day.at("18:30:00").do(mainJob)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
